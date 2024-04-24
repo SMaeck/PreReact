@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title> Unidad 2 </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script defer src="../js/main.js"></script>
+    </head>
+    <body>
+        <script>
+            do {
+                let nombre = prompt("Ingrese su Nombre:");
+                let apellido = prompt("Ingrese su Apellido:");
+                let edad = prompt("Ingrese su Edad:");
+                let sueldo = Number.parseFloat(prompt("Ingrese su Sueldo:"));
+                let sueldoNeto = sueldo * .83
+            } while (confirm("Desea ingresar otra persona?") == false);
+            
+            document.writeln("Hola !! Soy " + apellido + ", " + nombre + ", tengo " + edad + " años y gano un sueldo Neto de $" + sueldoNeto + " mensuales");    
+        </script> 
+    </body>
+</html>

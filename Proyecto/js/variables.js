@@ -18,12 +18,18 @@ function buscarFactor(propElegida){
         if (element[0] == propElegida)
             return Number.parseFloat(element[2])
     });
+
+    return 0
 }
 
-function buscarCostoBase
-ubicacion.forEach(element => {
-    if (element[0] == ubiElegida)
-        costoBase = Number.parseFloat(element[2])
-});
+function buscarCostoBase(ubiElegida){
+    ubicacion.forEach(element => {
+        if (element[0] == ubiElegida)
+            return Number.parseFloat(element[2])
+    });
 
-export {tipoPropiedad, ubicacion, buscarFactor}
+    return 0
+}
+
+
+export {tipoPropiedad, ubicacion, buscarFactor, buscarCostoBase}

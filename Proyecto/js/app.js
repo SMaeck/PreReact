@@ -1,5 +1,5 @@
-import { ubicacion } from "./variables.js"
-import { tipoPropiedad } from "./variables.js"
+import { buscarFactor } from "./variables.js"
+// import { tipoPropiedad } from "./variables.js"
 
 let listaUbicacion = ""
 
@@ -38,25 +38,14 @@ do {
 do {
     var metros = Number.parseInt(prompt("Ingrese la Cantidad de Metros Cuadrados (min 20 - max 500): "))
     
-    if (metros >= 20 && propElegida <= 500)
+    if (metros >= 20 && metros <= 500)
         metrosOk = true
     else
         alert("Cantidad de Metros inválida, Ingréselo nuevamente:")
 } while (!metrosOk);
 
-let costoBase = 0
-let factor = 0
-
-ubicacion.forEach(element => {
-    if (element[0] == ubiElegida)
-        costoBase = Number.parseFloat(element[2])
-});
-
-tipoPropiedad.forEach(element => {
-    if (element[0] == propElegida)
-        factor = Number.parseFloat(element[2])
-});
-
+let costoBase = buscarCostoBase(ubiElegida)
+let factor = buscarFactor(propElegida)
 let poliza = (metros * costoBase * factor).toFixed(2)
 
 alert("El costo de la Poliza es ==> " + poliza)

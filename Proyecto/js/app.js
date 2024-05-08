@@ -1,15 +1,10 @@
-import { buscarFactor } from "./variables.js"
-// import { tipoPropiedad } from "./variables.js"
-
-let listaUbicacion = ""
+import * as param from "variables.js"
 
 var ubiOk = false
 var propOk = false
 var metrosOk = false
 
-ubicacion.forEach(element => {
-    listaUbicacion += element[0] + ' - ' + element[1] + '\n'    
-});
+let listaUbicacion = param.listadoUbicacionesString()
 
 do {
     var ubiElegida = prompt(listaUbicacion)
@@ -20,11 +15,7 @@ do {
         alert("Ubicacion elegida incorrecto. Por favor, vuelva a indicar la Ubicación:")
 } while (!ubiOk);
 
-let listaTipoProp = "";
-
-tipoPropiedad.forEach(element => {
-    listaTipoProp += element[0] + ' - ' + element[1] + '\n'    
-});
+let listaTipoProp = param.listadoTipoPropString()
 
 do {
     var propElegida = Number.parseInt(prompt(listaTipoProp))
@@ -44,8 +35,8 @@ do {
         alert("Cantidad de Metros inválida, Ingréselo nuevamente:")
 } while (!metrosOk);
 
-let costoBase = buscarCostoBase(ubiElegida)
-let factor = buscarFactor(propElegida)
+let costoBase = param.buscarCostoBase(ubiElegida)
+let factor = param.buscarFactor(propElegida)
 let poliza = (metros * costoBase * factor).toFixed(2)
 
 alert("El costo de la Poliza es ==> " + poliza)

@@ -13,23 +13,46 @@ const ubicacion = [["A", "CABA", 1.012],
                    ["D", "Patagonia Argentina", 1.000]
 ]
 
-function buscarFactor(propElegida){
+function listadoTipoPropString(){
+    let listadoTipoProp = ""
+
     tipoPropiedad.forEach(element => {
-        if (element[0] == propElegida)
-            return Number.parseFloat(element[2])
+        listadoTipoProp += element[0] + ' - ' + element[1] + '\n'    
     });
 
-    return 0
+    return listadoTipoProp
+}
+
+function listadoUbicacionesString(){
+    let listadoUbicaciones = ""
+
+    ubicacion.forEach(element => {
+        listadoUbicaciones += element[0] + ' - ' + element[1] + '\n'    
+    });
+
+    return listadoUbicaciones
+}
+
+function buscarFactor(propElegida){
+    let cB = 0
+
+    tipoPropiedad.forEach(element => {
+        if (element[0] == propElegida)
+            cB =  Number.parseFloat(element[2])
+    });
+
+    return cB
 }
 
 function buscarCostoBase(ubiElegida){
+    let ft = 0
+
     ubicacion.forEach(element => {
         if (element[0] == ubiElegida)
-            return Number.parseFloat(element[2])
+            ft = Number.parseFloat(element[2])
     });
 
-    return 0
+    return ft
 }
 
-
-export {tipoPropiedad, ubicacion, buscarFactor, buscarCostoBase}
+export {tipoPropiedad, ubicacion, listadoTipoPropString, listadoUbicacionesString, buscarFactor, buscarCostoBase}
